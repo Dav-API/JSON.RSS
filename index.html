@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JSON.RSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css'>
+
+</head>
+
+<body>
+
+  <nav class="navbar sticky-top bg-light rounded shadow">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand">JSON.RSS</a>
+    </div>
+  </nav>
+
+  <div id="app">
+
+    <div class="container pt-3">
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col" v-for="post, invers in posts , +nuber" :key="invers">
+          <div class="card">
+
+            <a :href="posts.items[invers].url" target="_parent" class="card mb-3">
+              <img :src="thum+posts.items[invers].enclosure.url" class="card-img-top">
+            </a>
+
+            <div class="card-body">
+              <h5 class="card-title">{{ posts.items[invers].title }}</h5>
+              <p class="card-text">{{ posts.items[invers].description }}.</p>
+              <p class="card-text"><small class="text-muted">{{posts.items[invers].author}}</small>
+              </p>
+              <p class="card-text"><small class="text-muted">{{posts.items[invers].url }}</small></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js'></script>
+  <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js'></script>
+  <script src='https://redek-dp.github.io/servdevanalytics/server.id.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
