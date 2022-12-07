@@ -11,7 +11,7 @@ new Vue({
   },
   methods: {
     getData() {
-      axios.get("https://dav-api.github.io/JSON.RSS/api.json").then((posts) => {
+      axios.get("https://dav-api.github.io/leroapi/decomrradio.json").then((posts) => {
         this.posts = posts.data;
         console.log(this.posts);
       });
