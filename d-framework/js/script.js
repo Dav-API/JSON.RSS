@@ -3,7 +3,7 @@ new Vue({
   data: {
     nuber: "25",
     thum: "https://image.thum.io/get/image/fit/300x300/",
-    tilharurl: "https://compartilharurl.pages.dev/#/",
+    tilharurl: "https://compartilharurl.pages.dev/?url=",
     posts: []
   },
   created() {
@@ -11,7 +11,7 @@ new Vue({
   },
   methods: {
     getData() {
-      axios.get("https://dav-api.github.io/leroapi/decomrradio.json").then((posts) => {
+      axios.get("https://raw.githubusercontent.com/Dav-API/leroapi/gh-pages/v1/receitas/1.json").then((posts) => {
         this.posts = posts.data;
         console.log(this.posts);
       });
