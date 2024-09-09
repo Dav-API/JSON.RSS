@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>JSON.RSS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+  <link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.css" />
   <script src="./d-framework/js/pace.min.js"></script>
   <style>
     .bg-colorstat {
@@ -15,11 +15,51 @@
   </style>
 </head>
 
+
+<!-- MENU -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasmenu" aria-labelledby="offcanvasmenuLabel" style="width: 280px;" data-bs-theme="dark">
+  <div class="offcanvas-header shadow bg-body-tertiary">
+    <h5 class="offcanvas-title" id="offcanvasmenuLabel"><i class="bi bi-columns-gap pe-3"></i> MENU</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    <div class="fw-light fs-6 text-uppercase">
+      ❝ Aplicativos para várias plataformas by Developer Davidsonbpe.❞
+    </div>
+    <hr>
+    <div class="d-grid gap-2">
+      <button onclick="javascript:window.open('https://github.com/davidsonbpe')" class="mt-1 btn btn-secondary rounded-0 text-start fs-6 text-uppercase opacity-75" type="button">
+        <i class="bi bi-justify-left float-start pe-3"></i> GitHub
+      </button>
+      <button onclick="javascript:window.open('https://codepen.io/davidsonbpe')" class="mt-1 btn btn-secondary rounded-0 text-start fs-6 text-uppercase opacity-75" type="button">
+        <i class="bi bi-justify-left float-start pe-3"></i> CodePen
+      </button>
+      <button onclick="javascript:window.open('https://pag.ae/7Y3uUnhg8')" class="mt-1 btn btn-secondary rounded-0 text-start fs-6 text-uppercase opacity-75" type="button">
+        <i class="bi bi-justify-left float-start pe-3"></i> Doar com
+      </button>
+      <button onclick="javascript:window.open('https://davidsonbpe.blogspot.com/')" class="mt-1 btn btn-secondary rounded-0 text-start fs-6 text-uppercase opacity-75" type="button">
+        <i class="bi bi-justify-left float-start pe-3"></i> Developer
+      </button>
+      <button  id="shareButton" onclick="share(this)" class="mt-1 btn btn-secondary rounded-0 text-start fs-6 text-uppercase opacity-75" type="button">
+        <i class="bi bi-justify-left float-start pe-3"></i> Compartilhar
+      </button>
+    </div>
+  </div>
+
+  <div class="p-2 border-top">
+
+    <button type="button" class="btn btn-secondary rounded-0 fs-6 ps-4 pe-4 text-uppercase float-end opacity-75" data-bs-dismiss="offcanvas">Sair</button>
+  </div>
+</div>
+<!-- MENU -->
+
+
 <body class="bg-dark">
 
   <nav class="navbar sticky-top bg-colorstat rounded-0 rounded shadow">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button">
+      <button class="navbar-toggler border-0" type="button" title="MENU" data-bs-toggle="offcanvas" data-bs-target="#offcanvasmenu" aria-controls="offcanvasmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand">JSON.RSS</a>
@@ -73,7 +113,7 @@
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
           <a class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <i class="bi bi-stack fs-1"></i>
+            <i class="bi bi-film fs-1"></i>
           </a>
           <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
         </div>
@@ -81,17 +121,18 @@
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3">
             <a class="text-muted" target="_blank"
-              href="https://twitter.com/intent/tweet?text=&url=https://codepen.io/davidsonbpe/"><i
-                class="bi bi-twitter fs-2"></i></a>
+              href="https://codepen.io/davidsonbpe/">
+              <i class="bi bi-stack fs-2"></i>
+            </a>
           </li>
           <li class="ms-3"><a class="text-muted" target="_blank"
-              href="https://web.whatsapp.com/send?text=https://codepen.io/davidsonbpe/">
-              <i class="bi bi-whatsapp fs-2"></i>
+              href="https://github.com/Dav-API">
+              <i class="bi bi-github fs-2"></i>
           </li>
           <li class="ms-3">
-            <a class="text-muted" target="_blank"
-              href="https://mail.google.com/mail/?view=cm&to=&su=Confira%20isto%20%E2%80%93%20DECOM%20JSON.RSS&body=DECOM%20JSON.RSS%0Ahttps%3A%2F%2Fcodepen.io%2Fdavidsonbpe%2F%0AESTE%20APLICATIVO%20BY%20DAVIDSONBPE"><i
-                class="bi bi-youtube fs-2"></i></a>
+            <a class="text-muted" target="_blank" href="https://www.youtube.com/@decomtvs">
+              <i class="bi bi-youtube fs-2"></i>
+            </a>
 
           </li>
         </ul>
@@ -100,9 +141,9 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://redek-dp.github.io/servdevanalytics/server.id.js"></script>
   <script src="./d-framework/js/script.js"></script>
 
